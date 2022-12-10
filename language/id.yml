@@ -1,5 +1,5 @@
-start: "Hai {mention}, Saya adalah DuckBot.Saya di buat oleh tuan saya untuk manage grup.\nJadikan saya admin agar semua fitur dapat berfungsi dengan baik."
-addGroup: "Tambahkan saya ke grup"
+start: "Hai {mention}, Saya adalah Qya Bot.Saya di buat oleh tuan saya untuk manage grup.\nJadikan saya admin agar semua fitur dapat berfungsi dengan baik."
+addGroup: "Tambahkan ke grup"
 donate: "Donasi"
 helpButton: "Bantuan"
 docsButton: "Docs"
