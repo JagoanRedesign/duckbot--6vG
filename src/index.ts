@@ -36,7 +36,7 @@ import {setUsername} from './modules/setusername';
 import update from './modules/update';
 import {purge} from './modules/purge';
 import {kang} from './modules/kang';
-// import {people} from "./modules/people"
+import {people} from "./modules/people"
 connect();
 
 export const bot = new Telegraf(process.env['BOT_TOKEN'] as string);
