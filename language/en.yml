@@ -1,5 +1,5 @@
-start: "Hi {mention}, I am DuckBot. I was created by my master to manage the group.\nMake me the admin in your group so that all features can function properly."
-addGroup: "Add me to the group"
+start: "Hi {mention}, I am Qya Bot. I was created by my master to manage the group.\nMake me the admin in your group so that all features can function properly."
+addGroup: "Add to group"
 donate: "Donate"
 helpButton: "Help"
 docsButton: "Docs"
