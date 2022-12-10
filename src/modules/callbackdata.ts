@@ -64,14 +64,14 @@ export async function donate(ctx) {
     let keyboard = [
       [
         {
-          text: 'nyawer.co',
-          url: 'https://nyawer.co/Butthx',
+          text: 'donasi di trakteer',
+          url: 'https://trakteer.id/JagoanRedesign/tip',
           hide: true,
         },
       ],
     ]
     return ctx.editMessageText(
-      `${langs.textDonate}\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`,
+      `${langs.textDonate}`,
       {
         reply_markup: {
           inline_keyboard: keyboard,
