@@ -22,15 +22,15 @@ export async function start(ctx) {
   const keyboard = [
     [
       {
-        text: `🧚🏻‍♂️ ${langs.addGroup}`,
+        text: `➕ ${langs.addGroup} ➕`,
         url: `https://t.me/${ctx.botInfo.username}?startgroup=settings`,
         hide: true,
       },
     ],
     [
       {
-        text: `💲 ${langs.donate}`,
-        callback_data: 'donate',
+        text: `👨🏻‍🔧 ${langs.support}`,
+        url: `https://t.me/DutabotID`,
         hide: true,
       },
       {
@@ -39,18 +39,14 @@ export async function start(ctx) {
         hide: true,
       },
     ],
-    [
+[
       {
-        text: `👨🏻‍🔧 ${langs.support}`,
-        url: `https://t.me/Miss_DuckbotSupport`,
-        hide: true,
-      },
-      {
-        text: `📰 ${langs.news}`,
-        url: `https://t.me/Miss_DuckbotInfo`,
+        text: `${langs.donate}`,
+        callback_data: 'donate',
         hide: true,
       },
     ],
+
     [
       {
         text: `🌐 ${langs.btnSetlang}`,
