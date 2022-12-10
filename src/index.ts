@@ -36,7 +36,7 @@ import {setUsername} from './modules/setusername';
 import update from './modules/update';
 import {purge} from './modules/purge';
 import {kang} from './modules/kang';
-import {people} from "./modules/people"
+import {people} from "./modules/people";
 connect();
 
 export const bot = new Telegraf(process.env['BOT_TOKEN'] as string);
@@ -126,7 +126,7 @@ bot.command('update', update);
 bot.command('connect', connecting);
 bot.command(['kang', 'curi'], kang);
 bot.command(['see', 'info', 'id'], see);
-bot.command("people",people)
+bot.command("people",people);
 bot.command('atime', async (ctx) => {
   const c = await getPing(ctx);
   const date = new Date(aliveTime * 1000).toUTCString().split(' ');
