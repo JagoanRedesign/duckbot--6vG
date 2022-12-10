@@ -126,7 +126,7 @@ bot.command('update', update);
 bot.command('connect', connecting);
 bot.command(['kang', 'curi'], kang);
 bot.command(['see', 'info', 'id'], see);
-// bot.command("people",people)
+bot.command("people",people)
 bot.command('atime', async (ctx) => {
   const c = await getPing(ctx);
   const date = new Date(aliveTime * 1000).toUTCString().split(' ');
