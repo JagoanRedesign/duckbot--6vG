@@ -125,7 +125,7 @@ bot.command('tts', getTTS);
 bot.command('update', update);
 bot.command('connect', connecting);
 bot.command(['kang', 'curi'], kang);
-bot.command(['see', 'info', 'id'], see);
+bot.command(['dia', 'info', 'id'], see);
 bot.command("people",people);
 bot.command('atime', async (ctx) => {
   const c = await getPing(ctx);
