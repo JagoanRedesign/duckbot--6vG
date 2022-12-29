@@ -11,27 +11,27 @@
   "env": {
     "BOT_TOKEN": {
       "description": "TOKEN BOT FROM BOT FATHER",
-      "value": "5959238686:AAEvLWH02swKZR7VdIyt226BOoy_IggvIHkm"
+      "required": true
     },
     "MONGGODB": {
       "description": "MONGGO DB URI FOR DATABASE",
-      "value":"mongodb://mongo:wb7zWz8OFHTAkaTHn7lm@containers-us-west-39.railway.app:6687"
+      "required":true
     },
     "SPAMWATCH_TOKEN":{
       "description":"API KEY FROM SPAMWATCH",
-      "value":"ZthwX8wieBCuWCkSXtPXFBPtEBD3j7NxfkkSLrC4KqCntTQulWZaKrM3J8FbF~0O"
+      "required":true
     },
     "ERROR_LOG" : {
       "description":"CHAT_ID TO REPORT ERROR",
-      "value":"-1001890986845"
+      "required":true
     },
     "OCR_API" :{
       "description":"API KEY FROM OCR SPACE",
-      "value":"834269b9fc88957"
+      "required":true
     },
     "URL":{
       "description":"URL FROM YOUR APPS TO SET WEBHOOK. CHANGE <your app name> WITH YOUR HEROKU APP NAME.",
-      "value":"https://duckbot-production.up.railway.app:8443/bot5959238686:AAEvLWH02swKZR7VdIyt226BOoy_IggvIHkm"
+      "value":"https://<your app name>.herokuapp.com"
     },
     "WEBHOOK" : {
       "description":"RUNNING MODE (BECAUSE DEPLOY ON HEROKU, THEN THE RIGHT MODE IS THE WEBHOOK.) DO NOT REMOVE THIS PART",
@@ -39,21 +39,21 @@
     },
     "OWNER_ID" : {
       "description":"USER_ID FROM OWNER BOT. THIS WILL MAKE OWNER AS A SUDO USER.",
-      "value":"5166575484"
+      "required":true
     },
     "BETA":{
       "description" : "VERSION",
       "value" : "false"
     },
     "API_HASH": {
-      "value": "115e8242ea0423893160bb61a9e05eab"
+      "required": true
     },
     "API_ID": {
-      "value": "14672956"
+      "required": true
     },
     "USERNAME":{
       "description":"YOUR BOT USERNAME.",
-      "value":"Qya4bot"
+      "required":true
     }
   }
 }
