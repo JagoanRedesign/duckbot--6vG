@@ -21,7 +21,7 @@ export const privateSchema = new Schema({
   },
   lang: {
     type: String,
-    default: 'en',
+    default: 'id',
   },
   connected: {
     type: Number,
