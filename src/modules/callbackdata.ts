@@ -65,7 +65,7 @@ export async function donate(ctx) {
       [
         {
           text: 'donasi di trakteer',
-          url: 'https://trakteer.id/JagoanRedesign/tip',
+          url: 'https://trakteer.id/DutabotID/tip',
           hide: true,
         },
       ],
