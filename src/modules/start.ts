@@ -80,7 +80,7 @@ export async function start(ctx) {
 }
 export async function ping(ctx) {
   const c = await getPing(ctx);
-  const text = `🏓<b>PONG!</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`;
+  const text = `<b>PONG ✨</b>\n<b>Time Taken:</b> <code>${c}</code>\n<b>Service Uptime:</b> <code>${await getPing(ctx)}</code>`;
   return replyToMessage(ctx, text, false);
 }
 export async function setLang(ctx) {
@@ -256,7 +256,7 @@ export async function all(ctx) {
   try {
     const msg = await replyToMessage(
         ctx,
-        `WARNING! I will probably spam to mentioning all members in this group.\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(
+        `PERINGATAN! Saya mungkin akan melakukan spam untuk menyebutkan semua anggota di grup ini.\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(
             ctx,
         )}</code>`,
     );
@@ -284,7 +284,7 @@ export async function all(ctx) {
         }
       }
       ctx.replyWithHTML(
-          `<b>Hey All Member!</b>\n\n${mention}\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(
+          `<b>Hai Semua Anggota!</b>\n\n${mention}\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(
               ctx,
           )}</code>`,
           {
@@ -327,7 +327,7 @@ export async function see(ctx) {
         connected = pData.connected;
         warn = pData.warns.length;
       }
-      text += `\nConnected Chat : <code>${connected}</code>\nWarn in All Group: <code>${warn}</code>\nDuckbot Mata : <a href="https://duckbot.vercel.app/tools/duckbotmata?id=${
+      text += `\nConnected Chat : <code>${connected}</code>\nWarn in All Group: <code>${warn}</code>\nQya Mata : <a href="https://duckbot.vercel.app/tools/duckbotmata?id=${
         ctx.from.id
       }">View On Website</a>\nSee on <code>${join}</code> Groups.\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(
           ctx,
@@ -367,7 +367,7 @@ export async function see(ctx) {
         connected = pData.connected;
         warn = pData.warns?.length;
       }
-      text += `\nConnected Chat : <code>${connected}</code>\nWarn in All Group: <code>${warn}</code>\nDuckbot Mata : <a href="https://duckbot.vercel.app/tools/duckbotmata?id=${
+      text += `\nConnected Chat : <code>${connected}</code>\nWarn in All Group: <code>${warn}</code>\nQya Mata : <a href="https://duckbot.vercel.app/tools/duckbotmata?id=${
         ctx.message.reply_to_message.from.id
       }">View On Website</a>\nSee on <code>${join}</code> Groups.\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(
           ctx,
@@ -402,7 +402,7 @@ export async function see(ctx) {
       connected = pData.connected;
       warn = pData.warns?.length;
     }
-    text += `\nConnected Chat : <code>${connected}</code>\nWarn in All Group: <code>${warn}</code>\nDuckbot Mata : <a href="https://duckbot.vercel.app/tools/duckbotmata?id=${
+    text += `\nConnected Chat : <code>${connected}</code>\nWarn in All Group: <code>${warn}</code>\nQya Mata : <a href="https://duckbot.vercel.app/tools/duckbotmata?id=${
       ctx.from.id
     }">View On Website</a>\nSee on <code>${join}</code> Groups.\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(
         ctx,
