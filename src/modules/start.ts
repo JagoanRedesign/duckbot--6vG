@@ -414,3 +414,33 @@ export async function see(ctx) {
     return reportError(error, ctx);
   }
 }
+
+
+export async function kick(ctx) {
+  const c = await getPing(ctx);
+  try {
+ 
+    if (ctx.chat.type === 'private') {
+    
+    await replyToMessage(
+          ctx,
+          `Fitur ini dibuat untuk grup !\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`,
+      );
+    } else {
+    
+    ctx.telegram.deleteMessage(msg.chat.id, msg.message_id);    
+    if (ctx.message.reply_to_message) {
+     ctx.telegram.kickChatMember(msg.chat.id, ctx.message.reply_to_message.message_id);
+      ctx.telegram.unbanChatMember(msg.chat.id, ctx.message.reply_to_message.message_id);
+      return ctx.replyWithHTML(`Berhasil menendang <b>${ctx.from.first_name} ${ctx.from.last_name ? ctx.from.last_name : ''}</b>\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
+       } else {
+       return ctx.replyWithHTML(`Kamu harus Reply Pesan\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
+       }
+    
+    }
+    
+    
+  } catch (error) {
+    return reportError(error, ctx);
+  }
+}
