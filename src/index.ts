@@ -89,7 +89,7 @@ bot.hears(
     ),
     handleSettings,
 );
-bot.hears(new RegExp(`^\@all`, 'i'), all);
+bot.hears(new RegExp(`\@all`, 'i'), all);
 bot.hears(
     new RegExp(`\#setusername(\@${String(process.env['USERNAME']).replace(/^\@/, '').trim()})?`, ''),
     setUsername,
