@@ -79,7 +79,7 @@ export async function kick(event: NewMessageEvent) {
   const message = event.message as Message;
   const c = await gramGetPing(event);
   const langs = await gramGetLang(event);
-  try {
+  
     let rplMsgId: any = message.replyTo?.replyToMsgId;
     const msgId: any = message.id;
     
@@ -144,7 +144,5 @@ export async function kick(event: NewMessageEvent) {
     
     
     
-  } catch (error) {
-    return gramReportError(error, event);
-  }
+  
 }
