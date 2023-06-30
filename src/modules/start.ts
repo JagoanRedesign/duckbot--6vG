@@ -253,6 +253,7 @@ export async function cal(ctx) {
 export async function all(ctx) {
   const langs = await getLang(ctx);
   const c = await getPing(ctx);
+  const pesan = ctx.message.text;
   try {
     const msg = await replyToMessage(
         ctx,
@@ -284,9 +285,7 @@ export async function all(ctx) {
         }
       }
       ctx.replyWithHTML(
-          `<b>Hai Semua Anggota!</b>\n\n${mention}\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(
-              ctx,
-          )}</code>`,
+          `${pesan}\n\n${mention}`,
           {
             reply_to_message_id: msg.message_id,
           },
