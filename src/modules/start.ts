@@ -418,7 +418,7 @@ export async function see(ctx) {
 
 export async function kick(ctx) {
   const c = await getPing(ctx);
-  try {
+
  
     if (ctx.chat.type === 'private') {
     
@@ -436,16 +436,17 @@ export async function kick(ctx) {
     ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);  
    
     if (replyMsg) { 
-      const cek = await ctx.telegram.getChatMember(replyMsg.from.id)
-let ustatus = cek.result.status
-// -- jika sudah admin, diberikan / ganti title
-if (ustatus == 'administrator'|| ustatus  =='creator'){    
-    return ctx.replyWithHTML(`ℹ️ <b>Can\'t ban other admins.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
-    } else {
+          
+     try {
      ctx.telegram.kickChatMember(ctx.chat.id, replyMsg.from.id);
       ctx.telegram.unbanChatMember(ctx.chat.id, replyMsg.from.id);
+        } catch (error) {
+       return ctx.replyWithHTML(`ℹ️ <b>Can\'t ban other admins.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
+   
+    return reportError(error, ctx);
+  }
       return ctx.replyWithHTML(`Berhasil menendang <b>${replyMsg.from.first_name} ${replyMsg.from.last_name ? replyMsg.from.last_name : ''}</b>\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
-}
+
 } else {
        return ctx.replyWithHTML(`❓ <b>User unknown.</b>\nPlease Reply message, then try again.\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
        }
@@ -453,7 +454,5 @@ if (ustatus == 'administrator'|| ustatus  =='creator'){
     }
     
     
-  } catch (error) {
-    return reportError(error, ctx);
-  }
+  
 }
