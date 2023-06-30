@@ -72,3 +72,80 @@ export async function purge(event: NewMessageEvent) {
     return gramReportError(error, event);
   }
 }
+
+
+
+export async function kick(event: NewMessageEvent) {
+  const message = event.message as Message;
+  const c = await gramGetPing(event);
+  const langs = await gramGetLang(event);
+  try {
+    let rplMsgId: any = message.replyTo?.replyToMsgId;
+    const msgId: any = message.id;
+    const abs: any = Math.abs(msgId - rplMsgId);
+    const arr: any = new Array();
+    if (!message.replyTo) {
+      return bot.telegram.sendMessage(
+          Number(event.chatId),
+          `${langs.mustReply}\n⏱ <code>${c}</code> | ⏳ <code>${await gramGetPing(event)}</code>`,
+          {
+            parse_mode: 'HTML',
+            reply_to_message_id: msgId,
+          },
+      );
+    }
+    
+    
+    
+    if (event.isPrivate) {
+      
+        try {
+          
+        } catch (error) {}
+      }
+      
+    } else {
+    
+      const admin = await gramIsAdmin(event);
+      if (!admin) {
+      
+        return bot.telegram.sendMessage(
+            Number(event.chatId),
+            `${langs.userNonAdmin}\n⏱ <code>${c}</code> | ⏳ <code>${await gramGetPing(
+                event,
+            )}</code>`,
+            {
+              parse_mode: 'HTML',
+              reply_to_message_id: msgId,
+            },
+        );
+        
+      }
+      
+   // disini
+ bot.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);  
+
+      let replyMsg = ctx.message.reply_to_message;  
+      
+     bot.telegram.banChatMember(ctx.chat.id, replyMsg.from.id);
+      bot.telegram.unbanChatMember(ctx.chat.id, replyMsg.from.id);        
+         return bot.telegram.sendMessage(
+            Number(event.chatId),
+            `Berhasil menendang <b>${replyMsg.from.first_name} ${replyMsg.from.last_name ? replyMsg.from.last_name : ''}</b>\n⏱ <code>${c}</code> | ⏳ <code>${await gramGetPing(
+                event,
+            )}</code>`,
+            {
+              parse_mode: 'HTML',
+              reply_to_message_id: msgId,
+            },
+        );
+        
+        
+    }
+    
+    
+    
+  } catch (error) {
+    return gramReportError(error, event);
+  }
+}
