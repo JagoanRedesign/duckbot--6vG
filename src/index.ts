@@ -23,7 +23,7 @@ import {
   getPing,
 } from './modules/misc';
 handleEnv();
-import {start, ping, cal, setLang, all, see, kick} from './modules/start';
+import {start, ping, cal, setLang, all, see} from './modules/start';
 import {tesseract, ocr} from './modules/ocr';
 import {useLang, donate, settingsCallback, handleCal} from './modules/callbackdata';
 import {tr} from './modules/translate';
@@ -34,7 +34,7 @@ import {npm} from './modules/npm';
 import {getTTS} from './modules/tts';
 import {setUsername} from './modules/setusername';
 import update from './modules/update';
-import {purge} from './modules/purge';
+import {purge, kick} from './modules/purge';
 import {kang} from './modules/kang';
 import {people} from "./modules/people";
 connect();
