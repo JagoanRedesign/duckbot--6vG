@@ -433,10 +433,10 @@ export async function kick(ctx) {
     return ctx.replyWithHTML(`<b>Kamu harus jadi admin atau owner grup untuk melakukan tindakan ini.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
     }
     
-    ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);    
-    if (replyMsg) {
-   const { statusadmin } = await ctx.getChatMember(replyMsg.from.id)
-   if (['administrator', 'creator'].includes(statusadmin)) {   
+    ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);  
+   const { cekadmin } = await ctx.getChatMember(ctx.message.reply_to_message.from.id)
+    if (replyMsg) {   
+   if (['member'].includes(cekadmin)) {   
     return ctx.replyWithHTML(`ℹ️ <b>Can\'t ban other admins.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
     }
      ctx.telegram.kickChatMember(ctx.chat.id, replyMsg.from.id);
