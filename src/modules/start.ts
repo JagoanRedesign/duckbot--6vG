@@ -434,7 +434,26 @@ export async function kick(ctx) {
       return ctx.reply('Are you admin??');
     }
 
-    
+import {Message} from 'telegram/tl/custom/message';
+
+const message = event.message as Message;
+
+
+let rplMsgId: any = message.replyTo?.replyToChatId;
+const chatId: any = from.id;
+if (!message.replyTo) {
+      return bot.telegram.sendMessage(
+          Number(event.chatId),
+          `${langs.mustReply}\n⏱ <code>${c}</code> | ⏳ <code>${await gramGetPing(event)}</code>`,
+          {
+            parse_mode: 'HTML',
+            reply_to_message_id: ctx.message.message.id,
+          },
+      );
+    }
+
+      
+      
     ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);  
 
       let replyMsg = ctx.message.reply_to_message;  
