@@ -75,7 +75,7 @@ export async function purge(event: NewMessageEvent) {
 
 
 
-export async function kick(event: NewMessageEvent) {
+export async function kick(event) {
   const message = event.message as Message;
   const c = await gramGetPing(event);
   const langs = await gramGetLang(event);
