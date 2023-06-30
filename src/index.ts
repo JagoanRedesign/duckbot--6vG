@@ -34,7 +34,7 @@ import {npm} from './modules/npm';
 import {getTTS} from './modules/tts';
 import {setUsername} from './modules/setusername';
 import update from './modules/update';
-import {purge, kick} from './modules/purge';
+import {purge} from './modules/purge';
 import {kang} from './modules/kang';
 import {people} from "./modules/people";
 connect();
@@ -127,7 +127,7 @@ bot.command('connect', connecting);
 bot.command(['kang', 'curi'], kang);
 bot.command(['dia', 'info', 'id'], see);
 bot.command("people",people);
-bot.command('kick', kick);
+
 bot.command('atime', async (ctx) => {
   const c = await getPing(ctx);
   const date = new Date(aliveTime * 1000).toUTCString().split(' ');
