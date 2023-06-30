@@ -430,8 +430,8 @@ export async function kick(ctx) {
     
     ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);    
     if (ctx.message.reply_to_message) {
-     ctx.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.message_id);
-      ctx.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.message_id);
+     ctx.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id);
+      ctx.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id);
       return ctx.replyWithHTML(`Berhasil menendang <b>${ctx.from.first_name} ${ctx.from.last_name ? ctx.from.last_name : ''}</b>\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
        } else {
        return ctx.replyWithHTML(`Kamu harus Reply Pesan\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
