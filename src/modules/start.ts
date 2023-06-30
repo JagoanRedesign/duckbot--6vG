@@ -428,14 +428,15 @@ export async function kick(ctx) {
       );
     } else {
     let replyMsg = ctx.message.reply_to_message
-    const status = await ctx.telegram.getChatMember(ctx.chat.id, ctx.from.id);
-     if (status !== "administrator" || status !== "creator" || status !== "owner"){
+    const status = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id);
+     if (status == "member" || status == "user"){
       return ctx.replyWithHTML(`<b>Kamu harus jadi admin atau owner grup untuk melakukan tindakan ini.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
     }
     
     ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);    
     if (replyMsg) {
-    if (status !== "administrator" || status !== "creator" || status !== "owner"){
+    const cekadmin = await ctx.telegram.getChatMember(ctx.chat.id, replyMsg.from.id);
+    if (cekadmin == "administrator" || cekadmin == "creator" || cekadmin == "owner"){
      return ctx.replyWithHTML(`ℹ️ <b>Can\'t ban other admins.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
     }
      ctx.telegram.kickChatMember(ctx.chat.id, replyMsg.from.id);
