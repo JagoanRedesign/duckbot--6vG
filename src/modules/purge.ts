@@ -82,8 +82,7 @@ export async function kick(event: NewMessageEvent) {
   try {
     let rplMsgId: any = message.replyTo?.replyToMsgId;
     const msgId: any = message.id;
-    const abs: any = Math.abs(msgId - rplMsgId);
-    const arr: any = new Array();
+    
     if (!message.replyTo) {
       return bot.telegram.sendMessage(
           Number(event.chatId),
@@ -99,9 +98,7 @@ export async function kick(event: NewMessageEvent) {
     
     if (event.isPrivate) {
       
-        try {
-          
-        } catch (error) {}
+        
       }
       
     } else {
@@ -121,7 +118,9 @@ export async function kick(event: NewMessageEvent) {
         );
         
       }
-      
+
+
+    
    // disini
  bot.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);  
 
