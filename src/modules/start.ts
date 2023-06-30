@@ -437,18 +437,14 @@ export async function kick(ctx) {
     
     ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);  
 
-      let replyMsg = ctx.message.reply_to_message;
-    
-    if (replyMsg) { 
+      let replyMsg = ctx.message.reply_to_message;  
       
      ctx.telegra.banChatMember(ctx.chat.id, replyMsg.from.id);
       ctx.telegram.unbanChatMember(ctx.chat.id, replyMsg.from.id);        
       return ctx.replyWithHTML(`Berhasil menendang <b>${replyMsg.from.first_name} ${replyMsg.from.last_name ? replyMsg.from.last_name : ''}</b>\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
-      } 
       
-      if (!replyMsg) {
-       return ctx.replyWithHTML(`❓ <b>User unknown.</b>\nPlease Reply message, then try again.\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
-       }
+      
+      
     
     }
     
