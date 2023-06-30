@@ -253,8 +253,8 @@ export async function cal(ctx) {
 export async function all(ctx) {
   const langs = await getLang(ctx);
   const c = await getPing(ctx);
-  const pesan = ctx.message.text;
-  let pesan = pesan.replace(/(@all )/i, "")
+  const pesanall = ctx.message.text;
+  let pesan = pesanall.replace(/(@all )/i, "")
   try {
     const msg = await replyToMessage(
         ctx,
