@@ -435,10 +435,6 @@ export async function kick(ctx) {
     }
 
 
-if (!ctx.message.reply_to_message) {
-      return ctx.reply('Gak Jalan');
-      
-    }
 
       
       
