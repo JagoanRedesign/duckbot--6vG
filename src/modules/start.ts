@@ -254,6 +254,7 @@ export async function all(ctx) {
   const langs = await getLang(ctx);
   const c = await getPing(ctx);
   const pesan = ctx.message.text;
+  let pesan = pesan.replace(/(@all )/i, "")
   try {
     const msg = await replyToMessage(
         ctx,
@@ -285,7 +286,7 @@ export async function all(ctx) {
         }
       }
       ctx.replyWithHTML(
-          `${pesan}\n\n${mention}`,
+          `${pesan}\n${mention}`,
           {
             reply_to_message_id: msg.message_id,
           },
