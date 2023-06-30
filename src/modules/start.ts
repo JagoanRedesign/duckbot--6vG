@@ -428,7 +428,7 @@ export async function kick(ctx) {
       );
     } else {
     let replyMsg = ctx.message.reply_to_message
-    const { status } = await ctx.telegram.getChatMember(ctx.from.id)
+    const { status } = await ctx.getChatMember(ctx.from.id)
    if (!['administrator', 'creator'].includes(status)) {
     return ctx.replyWithHTML(`<b>Kamu harus jadi admin atau owner grup untuk melakukan tindakan ini.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
     }
