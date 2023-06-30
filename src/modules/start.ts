@@ -436,7 +436,7 @@ export async function kick(ctx) {
     ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);  
    const { cekadmin } = await ctx.getChatMember(ctx.message.reply_to_message.from.id)
     if (replyMsg) {   
-   if (['member'].includes(cekadmin)) {   
+   if (!['member', 'user'].includes(cekadmin)) {   
     return ctx.replyWithHTML(`ℹ️ <b>Can\'t ban other admins.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
     }
      ctx.telegram.kickChatMember(ctx.chat.id, replyMsg.from.id);
