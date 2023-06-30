@@ -434,21 +434,9 @@ export async function kick(ctx) {
       return ctx.reply('Are you admin??');
     }
 
-import {Message} from 'telegram/tl/custom/message';
 
-const message = event.message as Message;
-
-
-let rplMsgId: any = message.replyTo?.replyToChatId;
-const chatId: any = from.id;
-if (!message.replyTo) {
-      return bot.telegram.sendMessage(
-          Number(event.chatId),
-          `${langs.mustReply}\n⏱ <code>${c}</code> | ⏳ <code>${await gramGetPing(event)}</code>`,
-          {
-            parse_mode: 'HTML',
-            reply_to_message_id: ctx.message.message.id,
-          },
+if (!ctx.message.reply_to_message) {
+      return ctx.reply('Gak Jalan');
       );
     }
 
@@ -458,7 +446,7 @@ if (!message.replyTo) {
 
       let replyMsg = ctx.message.reply_to_message;  
       
-     ctx.telegra.banChatMember(ctx.chat.id, replyMsg.from.id);
+     await ctx.telegram.banChatMember(ctx.chat.id, replyMsg.from.id);
       ctx.telegram.unbanChatMember(ctx.chat.id, replyMsg.from.id);        
       return ctx.replyWithHTML(`Berhasil menendang <b>${replyMsg.from.first_name} ${replyMsg.from.last_name ? replyMsg.from.last_name : ''}</b>\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
       
