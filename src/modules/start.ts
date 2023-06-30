@@ -435,9 +435,9 @@ export async function kick(ctx) {
     
     ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);    
     if (replyMsg) {
-    const cekadmin = await ctx.telegram.getChatMember(ctx.chat.id, replyMsg.from.id);
-    if (cekadmin == "administrator" || cekadmin == "creator" || cekadmin == "owner"){
-     return ctx.replyWithHTML(`ℹ️ <b>Can\'t ban other admins.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
+   const { statusadmin } = await ctx.getChatMember(replyMsg.from.id)
+   if (['administrator', 'creator'].includes(statusadmin)) {   
+    return ctx.replyWithHTML(`ℹ️ <b>Can\'t ban other admins.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
     }
      ctx.telegram.kickChatMember(ctx.chat.id, replyMsg.from.id);
       ctx.telegram.unbanChatMember(ctx.chat.id, replyMsg.from.id);
