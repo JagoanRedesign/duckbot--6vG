@@ -428,21 +428,25 @@ export async function kick(ctx) {
       );
     } else {
     let replyMsg = ctx.message.reply_to_message
-    const { status } = await ctx.getChatMember(ctx.from.id)
+    const { status } = await ctx.telegram.getChatMember(ctx.from.id)
    if (!['administrator', 'creator'].includes(status)) {
     return ctx.replyWithHTML(`<b>Kamu harus jadi admin atau owner grup untuk melakukan tindakan ini.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
     }
     
     ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id);  
-   const { cekadmin } = await ctx.getChatAdministrators(ctx.chat.id)
-    if (replyMsg) {   
-   if (cekadmin.user.id == replyMsg.from.id) {   
+   
+    if (replyMsg) { 
+      const cek = await ctx.telegram.getChatMember(replyMsg.from.id)
+let ustatus = cek.result.status
+// -- jika sudah admin, diberikan / ganti title
+if (ustatus == 'administrator'|| ustatus  =='creator'){    
     return ctx.replyWithHTML(`ℹ️ <b>Can\'t ban other admins.</b>\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
-    }
+    } else {
      ctx.telegram.kickChatMember(ctx.chat.id, replyMsg.from.id);
       ctx.telegram.unbanChatMember(ctx.chat.id, replyMsg.from.id);
       return ctx.replyWithHTML(`Berhasil menendang <b>${replyMsg.from.first_name} ${replyMsg.from.last_name ? replyMsg.from.last_name : ''}</b>\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
-       } else {
+}
+} else {
        return ctx.replyWithHTML(`❓ <b>User unknown.</b>\nPlease Reply message, then try again.\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
        }
     
