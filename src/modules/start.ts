@@ -446,7 +446,7 @@ export async function kick(ctx) {
    
     }
       
-     ctx.telegram.kickChatMember(ctx.chat.id, replyMsg.from.id);
+     ctx.telegra.banChatMember(replyMsg.from.id);
       ctx.telegram.unbanChatMember(ctx.chat.id, replyMsg.from.id);
         
       return ctx.replyWithHTML(`Berhasil menendang <b>${replyMsg.from.first_name} ${replyMsg.from.last_name ? replyMsg.from.last_name : ''}</b>\n\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`)
