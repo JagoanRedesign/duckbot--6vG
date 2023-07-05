@@ -432,8 +432,7 @@ export async function kick(ctx) {
         return replyToMessage(ctx, langs.userNonAdmin, false);
       }
       
-    ctx.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id);
-      
+   await ctx.kickChatMember(ctx.message.reply_to_message.from.id, { until_date: Date.now()/1000 + 600 });
 
       } else {
       
