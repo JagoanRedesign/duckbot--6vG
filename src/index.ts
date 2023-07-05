@@ -23,7 +23,7 @@ import {
   getPing,
 } from './modules/misc';
 handleEnv();
-import {start, ping, cal, setLang, all, see} from './modules/start';
+import {start, ping, cal, setLang, all, see, kick} from './modules/start';
 import {tesseract, ocr} from './modules/ocr';
 import {useLang, donate, settingsCallback, handleCal} from './modules/callbackdata';
 import {tr} from './modules/translate';
@@ -127,6 +127,7 @@ bot.command('connect', connecting);
 bot.command(['kang', 'curi'], kang);
 bot.command(['dia', 'info', 'id'], see);
 bot.command("people",people);
+bot.command("kick",kick);
 
 bot.command('atime', async (ctx) => {
   const c = await getPing(ctx);
