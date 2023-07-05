@@ -433,7 +433,7 @@ export async function kick(ctx) {
       }
       
    await ctx.kickChatMember(ctx.message.reply_to_message.from.id, { until_date: Date.now()/1000 + 600 });
-     await replyToMessage(ctx, `<b>${ctx.from.first_name} ${ctx.from.last_name}</b> (<code>${ctx.from.id}</code>) <b>dikeluarkan`, false)
+     await replyToMessage(ctx, `<b>${ctx.from.first_name}</b> (<code>${ctx.from.id}</code>) dikeluarkan`, false)
 
       
       } else {
