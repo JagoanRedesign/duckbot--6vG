@@ -415,4 +415,34 @@ export async function see(ctx) {
   }
 }
 
+export async function kick(ctx) {
+  const c = await getPing(ctx);
+  const langs = await getLang(ctx);
+ 
+  try {
+    if (ctx.chat.type === 'private') {
+       
+   
+    } else {
 
+      
+    if (ctx.message.reply_to_message) {
+    
+    if (!(await isAdmin(ctx))) {
+        return replyToMessage(ctx, langs.userNonAdmin, false);
+      }
+      
+    ctx.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id);
+      
+
+      } else {
+      
+return replyToMessage(ctx, `❓ <b>User unknown.</b>\nPlease Reply message, then try again.`, false)
+      
+      }
+      }
+      
+  } catch (error) {
+    return reportError(error, ctx);
+  }
+}
