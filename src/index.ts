@@ -23,7 +23,7 @@ import {
   getPing,
 } from './modules/misc';
 handleEnv();
-import {start, ping, cal, setLang, all, see, kick} from './modules/start';
+import {start, ping, cal, setLang, all, see, kick, badword} from './modules/start';
 import {tesseract, ocr} from './modules/ocr';
 import {useLang, donate, settingsCallback, handleCal} from './modules/callbackdata';
 import {tr} from './modules/translate';
@@ -89,6 +89,7 @@ bot.hears(
     ),
     handleSettings,
 );
+bot.hears(new RegExp(`\anjing`, 'i'), badword);
 bot.hears(new RegExp(`\@all`, 'i'), all);
 bot.hears(
     new RegExp(`\#setusername(\@${String(process.env['USERNAME']).replace(/^\@/, '').trim()})?`, ''),
