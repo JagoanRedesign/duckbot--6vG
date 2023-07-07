@@ -449,19 +449,6 @@ return replyToMessage(ctx, `❓ <b>User unknown.</b>\nPlease Reply message, then
 }
 
 
-if ( /jancuk|jancok|cok|cuk|bull\s{0,}shit|jembut|jembot/i.exec(msg.text) ){
-      
-      var data ={
-        chat_id : update.message.chat.id,
-        user_id : update.message.from.id,
-        until_date : message.date+(2*60),
-      };
-      tg.kirimPesan(msg.chat.id, teks, 'HTML');
-     return tg.request ('', data);
-    }
-
-
-
 
 
 export async function badword(ctx) {
