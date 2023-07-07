@@ -454,12 +454,7 @@ return replyToMessage(ctx, `❓ <b>User unknown.</b>\nPlease Reply message, then
 export async function badword(ctx) {
   const c = await getPing(ctx);
   const langs = await getLang(ctx);
- var random = [];
-      random[1] = "Mulitnya diatur ya";
-      random[2] = "Mau di <b>KICK?</b>";
-      random[3] = "Kalau ga bisa di jaga mulutnya\nGA USAH COMMENT";
-      random[4] = "Mulut apa pantat\nGa pernah di sekolahin";
-      random[5] = "Nyolot banget kak?\nBelum pernah di <b>BANNED?</b>";
+ var random = ["Mulitnya diatur ya", "Mau di <b>KICK?</b>", "Kalau ga bisa di jaga mulutnya\nGA USAH COMMENT", "Mulut apa pantat\nGa pernah di sekolahin", "Nyolot banget kak?\nBelum pernah di <b>BANNED?</b>"];
       
   try {
     if (ctx.chat.type === 'private') {
