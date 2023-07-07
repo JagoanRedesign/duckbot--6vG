@@ -465,7 +465,7 @@ export async function badword(ctx) {
       
     const teks = Math.floor(Math.random() * random.length);
 
-     await replyToMessage(ctx, teks, false)
+     await replyToMessage(ctx, random[teks], false)
 
       
      
