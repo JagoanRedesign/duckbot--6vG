@@ -35,7 +35,7 @@ import {getTTS} from './modules/tts';
 import {setUsername} from './modules/setusername';
 import update from './modules/update';
 import {purge} from './modules/purge';
-import {kang} from './modules/kang';
+import {kang, setsticker} from './modules/kang';
 import {people} from "./modules/people";
 connect();
 
@@ -129,6 +129,7 @@ bot.command(['kang', 'curi'], kang);
 bot.command(['dia', 'info', 'id'], see);
 bot.command("people",people);
 bot.command("kick",kick);
+bot.command("copys",setsticker);
 
 bot.command('atime', async (ctx) => {
   const c = await getPing(ctx);
