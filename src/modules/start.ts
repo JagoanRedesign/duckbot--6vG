@@ -462,6 +462,14 @@ export async function badword(ctx) {
    
     } else {
 
+
+      ctx.restrictChatMember(
+  ctx.from.id,
+  {
+    permissions: { can_send_messages: false },
+    until_date: Date.now() / 1000 + 1 * 60,
+  }
+);
       
     const teks = Math.floor(Math.random() * random.length);
 
