@@ -89,7 +89,7 @@ bot.hears(
     ),
     handleSettings,
 );
-bot.hears(new RegExp(`\jancuk|jancok|cok|cuk|bull\s{0,}shit|jembut|jembot|bodoh|raimu|picek|budheg|gendeng|goblog|cangkeme|matane|aing|koplok|anjir|bagoy|babangus|bego|cemen|bego|tolol|babi|Idiot|gila\s{0,}|ngentod|buta|banci|monyet|bangke`, 'i'), badword);
+bot.hears(new RegExp(`\jancuk|jancok|cok|cuk|bull\s{0,}shit|jembut|jembot|bodoh|raimu|picek|budheg|gendeng|goblog|cangkeme|matane|aing|koplok|anjir|bagoy|babangus|bego|cemen|bego|tolol|babi|Idiot|ngentod|buta|banci|monyet|bangke`, 'i'), badword);
 bot.hears(new RegExp(`\@all`, 'i'), all);
 bot.hears(
     new RegExp(`\#setusername(\@${String(process.env['USERNAME']).replace(/^\@/, '').trim()})?`, ''),
