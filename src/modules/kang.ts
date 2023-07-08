@@ -320,7 +320,7 @@ export async function setsticker(ctx) {
           let pack = await ctx.telegram.getStickerSet(packName)
           if (pack.stickers.length > 50) {
             packNum++
-            packName = `property${packNum}_of_${String(process.env.USERNAME)
+            packName = `property{packNum}${ctx.from.id}_of_${String(process.env.USERNAME)
               .replace(/^\@/, '')
               .trim()}`
           } else {
@@ -426,7 +426,7 @@ export async function setsticker(ctx) {
           let pack = await ctx.telegram.getStickerSet(packName)
           if (pack.stickers.length > 120) {
             packNum++
-            packName = `sticker${packNum}_by_${String(process.env.USERNAME)
+            packName = `sticker{packNum}${ctx.from.id}_by_${String(process.env.USERNAME)
               .replace(/^\@/, '')
               .trim()}`
           } else {
