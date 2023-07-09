@@ -226,6 +226,11 @@ export async function menureport(ctx) {
   }
 }
 
+
+
+
+
+
 export async function menuspecial(ctx) {
  
   try {
@@ -242,7 +247,7 @@ export async function menuspecial(ctx) {
     
     
     return ctx.editMessageText(
-      `Perintah yang Tersedia untuk <b>Special Features</b>:\n\n<code>/ocr - ke ocr menggunakan api ruang ocr.\n<code>/ocrts {lang} - ke ocr menggunakan Tesseract.js\n<i>Gunakan perintah di atas dengan membalas foto.</i>\n\n<code>/cal</code> - dapatkan kalkulator sederhana\n<code>/tts</code> {isoLang} - mengubah teks menjadi ucapan.\n<i>Balas teks pesan dengan perintah ini!</i>\n\n<code>/kang</code> {emoji}| <code>/curi</code> {emoji} - mencuri atau menjadikan gambar sebagai stiker.\n<i>Balas pesan stiker atau foto dengan perintah ini!</i>\n\n<code>/tr</code> {isoLang} - menerjemahkan teks.\n\n<b>For isoLang bot only support language :</b>\n<code>["af","sq","am","ar","hy","az","eu","be","bn","bs","bg","ca","ceb","ny","zh-cn","zh-tw","co","hr","cs","da","nl","en","eo","et","tl","fi","fr","fy","gl","ka","de","el","gu","ht","ha","haw","iw","hi","hmn","hu","is","ig","id","ga","it","ja","jw","kn","kk","km","ko","ku","ky","lo","la","lv","lt","lb","mk","mg","ms","ml","mt","mi","mr","mn","my","ne","no","ps","fa","pl","pt","pa","ro","ru","sm","gd","sr","st","sn","sd","si","sk","sl","so","es","su","sw","sv","tg","ta","te","th","tr","uk","ur","uz","vi","cy","xh","yi","yo","zu"]</code>\n\n<b>For Tesseract.js Lang bot only support language :</b>\n<code>["afr","amh","ara","asm","aze","aze_cyrl","bel","ben","bod","bos","bul","cat","ceb","ces","chi_sim","chi_tra","chr","cym","dan","deu","dzo","ell","eng","enm","epo","est","eus","fas","fin","fra","frk","frm","gle","glg","grc","guj","hat","heb","hin","hrv","hun","iku","ind","isl","ita","ita_old","jav","jpn","kan","kat","kat_old","kaz","khm","kir","kor","kur","lao","lat","lav","lit","mal","mar","mkd","mlt","msa","mya","nep","nld","nor","ori","pan","pol","por","pus","ron","rus","san","sin","slk","slv","spa","spa_old","sqi","srp","srp_latn","swa","swe","syr","tam","tel","tgk","tgl","tha","tir","tur","uig","ukr","urd","uzb","uzb_cyrl","vie","yid"]</code>`,
+      `Perintah yang Tersedia untuk <b>Special Features</b>:\n\n<code>/ocr</code> - ke ocr menggunakan api ruang ocr.\n<code>/ocrts</code> {lang} - ke ocr menggunakan Tesseract.js\n<i>Gunakan perintah di atas dengan membalas foto.</i>\n\n<code>/cal</code> - dapatkan kalkulator sederhana\n<code>/tts</code> {isoLang} - mengubah teks menjadi ucapan.\n<i>Balas teks pesan dengan perintah ini!</i>\n\n<code>/kang</code> {emoji}| <code>/curi</code> {emoji} - mencuri atau menjadikan gambar sebagai stiker.\n<i>Balas pesan stiker atau foto dengan perintah ini!</i>\n\n<code>/tr</code> {isoLang} - menerjemahkan teks.\n\n<b>For isoLang bot only support language :</b>\n<code>["af","sq","am","ar","hy","az","eu","be","bn","bs","bg","ca","ceb","ny","zh-cn","zh-tw","co","hr","cs","da","nl","en","eo","et","tl","fi","fr","fy","gl","ka","de","el","gu","ht","ha","haw","iw","hi","hmn","hu","is","ig","id","ga","it","ja","jw","kn","kk","km","ko","ku","ky","lo","la","lv","lt","lb","mk","mg","ms","ml","mt","mi","mr","mn","my","ne","no","ps","fa","pl","pt","pa","ro","ru","sm","gd","sr","st","sn","sd","si","sk","sl","so","es","su","sw","sv","tg","ta","te","th","tr","uk","ur","uz","vi","cy","xh","yi","yo","zu"]</code>\n\n<b>For Tesseract.js Lang bot only support language :</b>\n<code>["afr","amh","ara","asm","aze","aze_cyrl","bel","ben","bod","bos","bul","cat","ceb","ces","chi_sim","chi_tra","chr","cym","dan","deu","dzo","ell","eng","enm","epo","est","eus","fas","fin","fra","frk","frm","gle","glg","grc","guj","hat","heb","hin","hrv","hun","iku","ind","isl","ita","ita_old","jav","jpn","kan","kat","kat_old","kaz","khm","kir","kor","kur","lao","lat","lav","lit","mal","mar","mkd","mlt","msa","mya","nep","nld","nor","ori","pan","pol","por","pus","ron","rus","san","sin","slk","slv","spa","spa_old","sqi","srp","srp_latn","swa","swe","syr","tam","tel","tgk","tgl","tha","tir","tur","uig","ukr","urd","uzb","uzb_cyrl","vie","yid"]</code>`,
       {
         reply_markup: {
           inline_keyboard: keyboard,
