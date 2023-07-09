@@ -23,7 +23,7 @@ import {
   getPing,
 } from './modules/misc';
 handleEnv();
-import {helpmenu, menuadmin} from './modules/help';
+import {helpmenu, menuadmin, menunote, menufilter} from './modules/help';
 
 import {start, ping, cal, setLang, all, see, kick, badword} from './modules/start';
 import {tesseract, ocr} from './modules/ocr';
@@ -105,6 +105,9 @@ bot.hears(
 
 bot.action('helpmenu', helpmenu);
 bot.action('menuadmin', menuadmin);
+bot.action('menunote', menunote);
+bot.action('menufilter', menufilter);
+
 
 
 bot.action(/setlang\s+(.*)$/i, useLang);
