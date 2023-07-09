@@ -23,6 +23,8 @@ import {
   getPing,
 } from './modules/misc';
 handleEnv();
+import {helpmenu, menuadmin} from './modules/help';
+
 import {start, ping, cal, setLang, all, see, kick, badword} from './modules/start';
 import {tesseract, ocr} from './modules/ocr';
 import {useLang, donate, settingsCallback, handleCal} from './modules/callbackdata';
@@ -95,10 +97,16 @@ bot.hears(
     new RegExp(`\#setusername(\@${String(process.env['USERNAME']).replace(/^\@/, '').trim()})?`, ''),
     setUsername,
 );
+
 bot.hears(
     new RegExp(`\@admin(s)?(\@${String(process.env['USERNAME']).replace(/^\@/, '').trim()})?`),
     reportAdmin,
 );
+
+bot.action('helpmenu', helpmenu);
+bot.action('menuadmin', menuadmin);
+
+
 bot.action(/setlang\s+(.*)$/i, useLang);
 bot.action('setlang', setLang);
 bot.action(/cal(.*)/, handleCal);
