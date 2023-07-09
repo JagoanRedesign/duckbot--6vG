@@ -23,7 +23,7 @@ import {
   getPing,
 } from './modules/misc';
 handleEnv();
-import {helpmenu, menuadmin, menunote, menufilter} from './modules/help';
+import {helpmenu, menuadmin, menunote, menufilter, menureport, menupurge, menuspecial} from './modules/help';
 
 import {start, ping, cal, setLang, all, see, kick, badword} from './modules/start';
 import {tesseract, ocr} from './modules/ocr';
@@ -107,6 +107,9 @@ bot.action('helpmenu', helpmenu);
 bot.action('menuadmin', menuadmin);
 bot.action('menunote', menunote);
 bot.action('menufilter', menufilter);
+bot.action('menuspecial', menuspecial);
+bot.action('menupurge', menupurge);
+bot.action('menureport', menureport);
 
 
 
