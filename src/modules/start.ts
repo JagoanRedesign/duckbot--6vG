@@ -34,8 +34,8 @@ export async function start(ctx) {
         hide: true,
       },
       {
-        text: `📖 ${langs.docsButton}`,
-        url: 'https://duckbot.vercel.app',
+        text: `Help`,
+        callback_data: 'helpmenu',
         hide: true,
       },
     ],
