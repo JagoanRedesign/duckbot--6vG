@@ -22,39 +22,34 @@ export async function start(ctx) {
   const keyboard = [
     [
       {
-        text: `➕ ${langs.addGroup} ➕`,
-        url: `https://t.me/${ctx.botInfo.username}?startgroup=settings`,
+        text: `ᴏᴡɴᴇʀ`,
+        url: `tg://user?id=5166575484`,
         hide: true,
       },
     ],
     [
       {
-        text: `👨🏻‍🔧 ${langs.support}`,
+        text: `sᴜᴘᴘᴏʀᴛ`,
         url: `https://t.me/DutabotID`,
         hide: true,
       },
       {
-        text: `Help`,
+        text: `ʙᴀɴᴛᴜᴀɴ`,
         callback_data: 'helpmenu',
-        hide: true,
-      },
-    ],
-[
-      {
-        text: `${langs.donate}`,
-        callback_data: 'donate',
         hide: true,
       },
     ],
 
     [
       {
-        text: `🌐 ${langs.btnSetlang}`,
-        callback_data: 'setlang',
+        text: `❖ ᴛᴀᴍʙᴀʜᴋᴀɴ  ᴋᴇ  ɢʀᴜᴘ ❖`,
+        url: `https://t.me/${ctx.botInfo.username}?startgroup=settings`,
         hide: true,
       },
     ],
   ];
+
+  
   if (ctx.chat.type !== 'private') {
     return replyToMessage(
         ctx,
