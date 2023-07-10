@@ -69,10 +69,13 @@ export async function start(ctx) {
       `${langs.start.replace(
           /\{mention\}/i,
           mention,
-      )}\n⏱ <code>${c}</code> | ⏳ <code>${await getPing(ctx)}</code>`,
+      )}`,
       keyboard,
   );
 }
+
+
+
 export async function ping(ctx) {
   const c = await getPing(ctx);
   const text = `<b>PONG ✨</b>\n<b>Time Taken:</b> <code>${c}</code>\n<b>Service Uptime:</b> <code>${await getPing(ctx)}</code>`;
